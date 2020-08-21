@@ -1,0 +1,35 @@
+{% extends 'finalapp/base.html'%}
+{% block title %} Search {% endblock %}
+{% block content %}
+<div>
+    {% if messages %}
+    <ul class="alert">
+        {% for k in messages %}
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong> {{k}} </strong>
+        {% endfor %}
+    </ul>
+        {% endif %}
+    </div><br>
+    <table class="content-table">
+        <thead>
+    <tr>
+        <th> Log Source </th>
+        <th> Rule Name </th>
+        <th> Condition </th>
+        <th> Tactics </th>
+    </tr>
+        </thead>
+        <tbody>
+        {% for k in sr %}
+    <tr>
+        <td>{{k.log_source}}</td>
+        <td>{{k.name}}</td>
+        <td>{{k.condition}}</td>
+        <td>{{k.tactics}}</td>
+    </tr>
+{% endfor %}
+        </tbody>
+</table>
+    </div>
+{% endblock %}

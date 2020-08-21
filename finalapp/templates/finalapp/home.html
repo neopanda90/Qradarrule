@@ -1,0 +1,24 @@
+{% extends 'finalapp/base.html'%}
+{% block title %} Find Your Rule {% endblock %}
+{% block content %}
+    <table class="content-table">
+        <thead>
+    <tr>
+        <th> Log Source </th>
+        <th> Rule Name </th>
+        <th> Condition </th>
+        <th> Tactics </th>
+    </tr>
+        </thead>
+        <tbody>
+    {% for ob in obj1 %}
+    <tr>
+        <td>{{ob.log_source}}</td>
+        <td>{{ob.name}}</td>
+        <td>{{ob.condition}}</td>
+        <td>{{ob.tactics}}</td>
+    </tr>
+{% endfor %}
+        </tbody>
+</table>
+{% endblock %}
